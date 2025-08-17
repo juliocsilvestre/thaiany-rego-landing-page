@@ -107,7 +107,7 @@ const ClinicsSection = () => {
           <Button
             onClick={() => handlePhoneClick(clinic.phone)}
             variant="outline"
-            className="btn-secondary-medical flex-1"
+            className="text-primary border-primary hover:bg-primary/10 hover:text-primary-dark focus:ring-primary btn-secondary-medical flex-1"
             size="sm"
           >
             <Phone className="mr-2 h-4 w-4" />

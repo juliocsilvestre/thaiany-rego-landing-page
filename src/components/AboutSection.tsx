@@ -63,7 +63,7 @@ const AboutSection = () => {
               alt="Consultório médico da Dra. Thaiany Rego" 
               className="rounded-3xl shadow-medium w-full h-[500px] object-cover"
             />
-            <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-medium">
+            <div className="absolute -bottom-6 -left-6 bg-[#d09f8b] text-white p-6 rounded-2xl shadow-medium">
               <div className="text-3xl font-bold">10+</div>
               <div className="text-sm">Anos de experiência</div>
             </div>
