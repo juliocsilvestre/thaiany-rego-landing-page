@@ -76,7 +76,7 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-8 md:p-12">
+  <div id="valores" className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-8 md:p-12">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Nossos Valores</h3>
             <p className="text-lg text-muted-foreground">

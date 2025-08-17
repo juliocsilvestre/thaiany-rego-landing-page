@@ -14,7 +14,7 @@ const HeroSection = () => {
         <img 
           src={heroImage} 
           alt="Consulta médica - Dra. Thaiany Rego" 
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
       </div>
@@ -45,9 +45,9 @@ const HeroSection = () => {
                 Agende sua consulta
               </Button>
               
-              <Button 
-                variant="outline" 
-                className="btn-secondary-medical text-lg"
+              <Button
+                variant="outline"
+                className="text-primary border-primary hover:bg-primary/10 hover:text-primary-dark focus:ring-primary text-lg btn-secondary-medical"
                 size="lg"
                 onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
               >

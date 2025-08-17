@@ -55,65 +55,72 @@ const ClinicsSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {clinics.map((clinic, index) => (
-            <Card key={index} className="card-medical group">
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {clinic.name}
-                  </h3>
-                  <div className="flex items-start space-x-2 text-muted-foreground">
-                    <MapPin className="h-5 w-5 mt-0.5 text-primary" />
-                    <p className="text-sm">{clinic.address}</p>
-                  </div>
-                </div>
+  {clinics.map((clinic, index) => (
+    <Card key={index} className="card-medical group h-full">
+      <div className="flex flex-col justify-between h-full p-6">
+        <div className="space-y-6">
+          {/* Título + Endereço */}
+          <div className="space-y-2">
+            <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+              {clinic.name}
+            </h3>
+            <div className="flex items-start space-x-2 text-muted-foreground">
+              <MapPin className="h-5 w-5 mt-0.5 text-primary" />
+              <p className="text-sm">{clinic.address}</p>
+            </div>
+          </div>
 
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2">
-                    <Clock className="h-5 w-5 text-primary" />
-                    <p className="text-sm text-muted-foreground">{clinic.hours}</p>
-                  </div>
-                </div>
+          {/* Horários */}
+          <div className="space-y-3">
+            <div className="flex items-center space-x-2">
+              <Clock className="h-5 w-5 text-primary" />
+              <p className="text-sm text-muted-foreground">{clinic.hours}</p>
+            </div>
+          </div>
 
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-sm text-foreground">Especialidades:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {clinic.specialties.map((specialty, idx) => (
-                      <span 
-                        key={idx}
-                        className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
-                      >
-                        {specialty}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                  <Button
-                    onClick={() => handleWhatsAppClick(clinic.whatsapp, clinic.name)}
-                    className="btn-medical flex-1"
-                    size="sm"
-                  >
-                    <MessageCircle className="mr-2 h-4 w-4" />
-                    WhatsApp
-                  </Button>
-                  <Button
-                    onClick={() => handlePhoneClick(clinic.phone)}
-                    variant="outline"
-                    className="btn-secondary-medical flex-1"
-                    size="sm"
-                  >
-                    <Phone className="mr-2 h-4 w-4" />
-                    Ligar
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          ))}
+          {/* Especialidades */}
+          <div className="space-y-2">
+            <h4 className="font-semibold text-sm text-foreground">Especialidades:</h4>
+            <div className="flex flex-wrap gap-2">
+              {clinic.specialties.map((specialty, idx) => (
+                <span
+                  key={idx}
+                  className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                >
+                  {specialty}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="text-center mt-12">
+        {/* Botões fixados na parte de baixo */}
+        <div className="flex flex-col sm:flex-row gap-3 pt-6 mt-auto">
+          <Button
+            onClick={() => handleWhatsAppClick(clinic.whatsapp, clinic.name)}
+            className="btn-medical flex-1"
+            size="sm"
+          >
+            <MessageCircle className="mr-2 h-4 w-4" />
+            WhatsApp
+          </Button>
+          <Button
+            onClick={() => handlePhoneClick(clinic.phone)}
+            variant="outline"
+            className="btn-secondary-medical flex-1"
+            size="sm"
+          >
+            <Phone className="mr-2 h-4 w-4" />
+            Ligar
+          </Button>
+        </div>
+      </div>
+    </Card>
+  ))}
+</div>
+
+
+        <div className="text-center mt-12" id="agendamento">
           <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8">
             <h3 className="text-2xl font-bold mb-4">Facilitamos seu Agendamento</h3>
             <p className="text-muted-foreground mb-6">
